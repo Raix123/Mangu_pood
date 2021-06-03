@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="action.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="C:\xampp\htdocs\css\lightbox.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<title>Action</title>
+</head>
+<body>
+<style>
+body{
+    font-family: Palatino, URW Palladio L, serif;
+	background-color: DimGray;
+}
+h1{
+	margin-left: 0.2rem;
+	padding: 1rem;
+	color: white;
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" style="font-size:2rem;" href="#"><strong>PengFox Games</strong></a>
+  <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search"  action="" method="GET" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+	  <!-- 1 Genre Drop Down -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Genre
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="Action.html">Action</a>
+          <a class="dropdown-item" href="Roleplay.html">Role-Play</a>
+          <a class="dropdown-item" href="Strategy.html">Strategy</a>
+		  <a class="dropdown-item" href="Adventure.html">Adventure</a>
+		  <a class="dropdown-item" href="https://www.youtube.com/watch?v=oHg5SJYRHA0">Casual</a>
+		  <a class="dropdown-item" href="Simulation.html">Simulation</a>
+		  <a class="dropdown-item" href="Sports.html">Sports & Racing</a>
+        </div>
+      </li> 
+	  <!-- 2 Theme Drop Down -->
+	  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Theme
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="Survival.html">Survival</a>
+          <a class="dropdown-item" href="Openworld.html">Open World</a>
+          <a class="dropdown-item" href="Shooter.html">Shooter</a>
+		  <a class="dropdown-item" href="Horror.html">Horror</a>
+		  <a class="dropdown-item" href="Scifi.html">Sci-Fi</a>
+		  <a class="dropdown-item" href="mystery.html">Mystery & Detective</a>
+        </div>
+      </li>
+	  <!-- 3 Player Support -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Player Support
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Singleplayer</a>
+          <a class="dropdown-item" href="#">Multiplayer</a>
+          <a class="dropdown-item" href="#">CO-OP</a>
+        </div>
+      </li>
+	  <!-- 3 End -->
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" hidden>Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<h1>ACTION</h1>
+	</div>
+</div>
+<div class="container">
+<?php include('config.php'); ?>
+<?php
+$paring = 'SELECT * FROM mangud WHERE zanr="Action"';
+$vastus = mysqli_query($yhendus, $paring);
+//väljastamine
+while ($rida = mysqli_fetch_assoc($vastus)){
+ //var_dump($rida);
+ echo '<h3>'.$rida['Nimi'].'</h3>';
+ echo '<p>'.$rida['hind'].'"€"</p>';
+}
+?>
+</div>
+
+<script src="C:\xampp\htdocs\js\lightbox.js"></script>
+</body>
+</html>
+
