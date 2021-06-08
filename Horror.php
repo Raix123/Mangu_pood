@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="action.css" rel="stylesheet">
+<link href="Horror.css" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link href="css\lightbox.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>Action</title>
+<title>Horror</title>
 </head>
 <body>
 <style>
@@ -39,7 +39,7 @@ body{
           <a class="dropdown-item" href="Role-Play.php">Role-Play</a>
           <a class="dropdown-item" href="Strategy.php">Strategy</a>
 		  <a class="dropdown-item" href="Adventure.php">Adventure</a>
-		  <a class="dropdown-item" href="Casual.php">Casual</a>
+		  <a class="dropdown-item" href="Survival.php">Survival</a>
 		  <a class="dropdown-item" href="Simulation.php">Simulation</a>
 		  <a class="dropdown-item" href="Sports.php">Sports & Racing</a>
         </div>
@@ -50,7 +50,6 @@ body{
           Theme
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="Survival.php">Survival</a>
           <a class="dropdown-item" href="OpenWorld.php">Open World</a>
           <a class="dropdown-item" href="Shooter.php">Shooter</a>
 		  <a class="dropdown-item" href="Horror.php">Horror</a>
@@ -84,7 +83,7 @@ body{
 </nav>
 <div class="jumbotron jumbotron-fluid">
 	<div class="container">
-		<h1>ACTION</h1>
+		<h1>HORROR</h1>
 	</div>
 </div>
 <?php
@@ -113,7 +112,7 @@ if (isset($_GET['page'])) {
 //millest näitamist alustatakse
 $start = ($leht-1)*$mange_lehel;
 //andmebaasist andmed
-$paring = "SELECT * FROM mangud WHERE zanr='Action' LIMIT $start, $mange_lehel";
+$paring = "SELECT * FROM mangud WHERE teema='Horror' LIMIT $start, $mange_lehel";
 $vastus = mysqli_query($yhendus, $paring);
 //väljastamine
 while ($rida = mysqli_fetch_assoc($vastus)){
